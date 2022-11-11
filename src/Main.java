@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 public class Main {
   private static List<Employee> employees = new ArrayList<>();
+  private static String [] fruits = new String[] {"apple", "orange", "jkhdsfg", "aslkfdj"};
 
   static {
     employees.add(new Employee("Ivan", "Ivanov", 5000, List.of("Sales", "Support")));
@@ -21,7 +22,7 @@ public class Main {
 
   public static void main(String[] args) {
     //Создание Stream
-    Stream<Employee> employeeStream = employees.stream(); //Определен у интерфейса Collection
+    /*Stream<Employee> employeeStream = employees.stream(); //Определен у интерфейса Collection
     Stream<Integer> integerStream =
         Stream.of(1, 2, 3, 4, 5, 6, 7); // Построение стрима из списка элементов
     Arrays.stream(new String[] {"123", "321"}); //Построение стрима из массива
@@ -108,7 +109,32 @@ public class Main {
     //Sort
     employees.stream()
         .sorted(Comparator.comparing(Employee::getSalary))
-        .collect(Collectors.toList());
+        .collect(Collectors.toList());*/
+    System.out.println("Sum of A fruits is " + countAllFruitsWithA(fruits));
+    printFruits(List.of(fruits));
+  }
 
+  /**
+   * метод возвращает количество фруктов, названия которых начинаются на А
+   * @param fruits
+   * @return
+   */
+  public static long countAllFruitsWithA(String[] fruits) {
+    long sum = 0;
+    sum = Arrays.stream(fruits)
+            .filter(f -> f.charAt(0) == 'a')
+            .count();
+    return sum;
+  }
+
+  /**
+   * метод должен распечатать все фрукты в алфавитном порядке в UpperCase
+   * @param fruits
+   */
+  public static void printFruits(List<String> fruits) {
+    fruits.stream()
+            .sorted()
+            .map(f -> f.toUpperCase())
+            .forEach(System.out::println);
   }
 }
