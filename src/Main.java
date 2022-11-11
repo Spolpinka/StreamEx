@@ -137,4 +137,6 @@ public class Main {
             .map(f -> f.toUpperCase())
             .forEach(System.out::println);
   }
+
+  public static
 }
