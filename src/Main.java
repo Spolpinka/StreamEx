@@ -9,7 +9,9 @@ import java.util.stream.Stream;
 
 public class Main {
   private static List<Employee> employees = new ArrayList<>();
-  private static String [] fruits = new String[] {"apple", "orange", "jkhdsfg", "aslkfdj"};
+  private static Fruit [] fruits = new Fruit[]
+          {new Fruit("apple"), new Fruit("orange"), new Fruit("apricot"), new Fruit("avocado")
+                  , new Fruit("pineapple"), new Fruit("watermelon"), new Fruit("melon")};
 
   static {
     employees.add(new Employee("Ivan", "Ivanov", 5000, List.of("Sales", "Support")));
@@ -111,7 +113,8 @@ public class Main {
         .sorted(Comparator.comparing(Employee::getSalary))
         .collect(Collectors.toList());*/
     System.out.println("Sum of A fruits is " + countAllFruitsWithA(fruits));
-    printFruits(List.of(fruits));
+    printFruits(Arrays.stream(fruits).map(s -> s.getName()).collect(Collectors.toList()));
+
   }
 
   /**
@@ -119,10 +122,10 @@ public class Main {
    * @param fruits
    * @return
    */
-  public static long countAllFruitsWithA(String[] fruits) {
+  public static long countAllFruitsWithA(Fruit[] fruits) {
     long sum = 0;
     sum = Arrays.stream(fruits)
-            .filter(f -> f.charAt(0) == 'a')
+            .filter(f -> f.getName().charAt(0) == 'a')
             .count();
     return sum;
   }
@@ -134,9 +137,22 @@ public class Main {
   public static void printFruits(List<String> fruits) {
     fruits.stream()
             .sorted()
-            .map(f -> f.toUpperCase())
+            .map(String::toUpperCase)
             .forEach(System.out::println);
   }
 
-  public static
+  /**
+   * метод принимает пару фрукт и его идентификатор, выбирает 2 фрукта с именами больше 5 символов
+   * и собирает их в Map в которой ключом является id фрукта, а значение - сам фрукт
+   * @param fruits
+   * @return
+   */
+  public static Map<Integer, String> longestNames(List<Fruit> fruits) {
+    int max = 0;
+    fruits.stream()
+            .filter(f -> f.getName().length() > 5)
+            .collect(f -> Collectors.toMap(<f.getId()))
+
+    return null;
+  }
 }
