@@ -149,9 +149,11 @@ public class Main {
    */
   public static Map<Integer, String> longestNames(List<Fruit> fruits) {
     int max = 0;
-    fruits.stream()
+    return fruits.stream()
             .filter(f -> f.getName().length() > 5)
-            .collect(f -> Collectors.toMap(<f.getId()))
+            .collect(Collectors.toMap(fruit -> fruit.getId(), fruit -> fruit))
+            .put()
+
 
     return null;
   }
