@@ -151,8 +151,7 @@ public class Main {
     int max = 0;
     return fruits.stream()
             .filter(f -> f.getName().length() > 5)
-            .collect(Collectors.toMap(fruit -> fruit.getId(), fruit -> fruit))
-            .put()
+            .collect(Collectors.toMap(fruit -> < ));
 
 
     return null;
