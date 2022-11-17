@@ -114,6 +114,7 @@ public class Main {
         .collect(Collectors.toList());*/
     System.out.println("Sum of A fruits is " + countAllFruitsWithA(fruits));
     printFruits(Arrays.stream(fruits).map(s -> s.getName()).collect(Collectors.toList()));
+    System.out.println(longestNames(Arrays.asList(fruits)));
 
   }
 
