@@ -140,6 +140,10 @@ public class Main {
             .sorted()
             .map(String::toUpperCase)
             .forEach(System.out::println);
+    for (Fruit f :
+            fruits) {
+      System.out.println(f);
+    }
   }
 
   /**
