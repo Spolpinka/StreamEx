@@ -140,10 +140,7 @@ public class Main {
             .sorted()
             .map(String::toUpperCase)
             .forEach(System.out::println);
-    for (String f :
-            fruits) {
-      System.out.println(f);
-    }
+
   }
 
   /**
