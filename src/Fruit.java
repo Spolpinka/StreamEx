@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Fruit {
     private int id;
     private static int counter;
@@ -22,5 +24,18 @@ public class Fruit {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fruit fruit = (Fruit) o;
+        return id == fruit.id && Objects.equals(name, fruit.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
