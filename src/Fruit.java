@@ -31,7 +31,7 @@ public class Fruit {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Fruit fruit = (Fruit) o;
-        return id == fruit.id && Objects.equals(name, fruit.name);
+        return Objects.equals(name, fruit.name);
     }
 
     @Override
