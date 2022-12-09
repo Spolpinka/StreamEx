@@ -8,6 +8,7 @@ public class Fruit {
     public Fruit(String name) {
         this.name = name;
         id = counter++;
+        System.out.println(name);
     }
 
     public int getId() {
