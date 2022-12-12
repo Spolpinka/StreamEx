@@ -9,6 +9,7 @@ public class Fruit {
         this.name = name;
         id = counter++;
         System.out.println(name);
+        System.out.println(name + "repeat");
     }
 
     public int getId() {
